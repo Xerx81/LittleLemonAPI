@@ -41,9 +41,11 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'djoser',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -136,3 +138,7 @@ REST_FRAMEWORK = {
 DJOSER = {
     'USER_ID_FIELD': 'username',
 }
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:5173",
+]
